@@ -11,6 +11,19 @@ for (var i = 0; i < topics.length; i++) {
     $("#memeButtons").append(button);
 }
 
+$("#addMeme").on("click", function(event) {
+    // preventing the button from trying to submit the form
+    event.preventDefault();
+    // storing the artist name
+    var inputMeme = $("#meme-input").val().trim();
+
+    console.log(inputMeme);
+    var newButton = $("<button>");
+    newButton.text(inputMeme);
+    newButton.attr("data-meme", inputMeme);
+    $("#memeButtons").append(newButton); 
+  })
+
 // event listener for meme buttons
 $("#memeButtons").on("click", "button", function() {
     $("#gifsHere").empty();
@@ -72,6 +85,7 @@ $("#memeButtons").on("click", "button", function() {
                 $(this).attr("data-state", "still");
             }
     }) 
+
     });       
 })
 })
