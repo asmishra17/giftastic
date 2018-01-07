@@ -1,6 +1,6 @@
 $(document).ready(function() {
 // global variables
-var topics = ["crying kim", "kermit", "crying jordan", "salt bae", "sips tea", "hair flip", "troll", "asahd"]
+var topics = ["crying kim", "kermit", "crying jordan", "salt bae", "sips tea", "doge", "grumpy cat", "asahd"]
 var meme;
 
 // creating buttons for topics array
@@ -43,8 +43,12 @@ $("#memeButtons").on("click", "button", function() {
         var rating = $("<p>").text("Rating: " + results[i].rating);
         // creating and storing an image tag
         var memeImage = $("<img>");
+        memeImage.addClass("gif");
         // setting the src attribute of the image to a property pulled off the result item
         memeImage.attr("src", results[i].images.fixed_height_still.url);
+        memeImage.attr("data-still", results[i].images.fixed_height_still.url);
+        memeImage.attr("data-animate", results[i].images.fixed_height.url);
+        memeImage.attr("data-state", "still")
         //fixed_height.url);
         // appending the paragraph and image tag to the memeDiv
         memeDiv.append(rating);
@@ -53,11 +57,22 @@ $("#memeButtons").on("click", "button", function() {
         // appending the memeDiv to the HTML page
         $("#gifsHere").append(memeDiv);
         }
-        
-    })
+
+        // click function for gifs 
+        $(".gif").on("click", function() {
+            console.log("test");
+            var state = $(this).attr("data-state");
+            if (state === "still") {
+                console.log("test");
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+            } else {
+                console.log("test");
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
+            }
+    }) 
+    });       
+})
 })
 
-
-
-  
-});
