@@ -18,19 +18,35 @@
     button {
         margin: 0px 5px 0px 5px;
     }
+
+    #background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    }
+
+    .container {
+    position: relative,
+    }
     </style>
 </head>
 <body>
+    <div class = "container">
+    <h1>Magical Meme Buttons</h1>
     <div id = "memeButtons"></div>
     <br>
     <form id = "meme-form">
         <label for = "meme-input">Add a meme!</label>
         <input type = "text" id = "meme-input">
-        <br>
+        <br><br>
         <input id = "addMeme" type = "submit" value = "Submit">
+        <input id = "surprise" type = "submit" value = "Surprise!">
     </form>
     <br>
     <div id = "gifsHere"></div>
+    </div>
 </body>
 
 <!-- linking JS and JQuery -->
