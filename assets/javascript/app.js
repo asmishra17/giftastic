@@ -1,12 +1,13 @@
 $(document).ready(function() {
 // global variables
 var topics = ["crying kim", "kermit", "crying jordan", "salt bae", "sips tea", "doge", "grumpy cat", "asahd"]
-var surprise = ["condescending wonka", "success kid", "rickroll"]
+var surprise = ["condescending wonka", "success kid", "rickroll", "dab", "honey badger", "nyan cat"]
 var meme;
     
 // creating buttons for topics array
 for (var i = 0; i < topics.length; i++) {
     var button = $("<button>");
+    button.addClass("btn btn-secondary");
     button.text(topics[i]);
     button.attr("data-meme", topics[i]);
     $("#memeButtons").append(button);
@@ -19,6 +20,7 @@ $("#addMeme").on("click", function(event) {
     var inputMeme = $("#meme-input").val().trim();
         
     var newButton = $("<button>");
+    newButton.addClass("btn btn-secondary");
     newButton.text(inputMeme);
     newButton.attr("data-meme", inputMeme);
     $("#memeButtons").append(newButton); 
@@ -29,8 +31,9 @@ $("#surprise").on("click", function(event) {
     event.preventDefault();
 
     var chosenSurprise = surprise[Math.floor(Math.random() * surprise.length)];
-
+    
     var surpriseButton = $("<button>");
+    surpriseButton.addClass("btn btn-secondary");
     surpriseButton.text(chosenSurprise);
     surpriseButton.attr("data-meme", chosenSurprise);
     $("#memeButtons").append(surpriseButton);

@@ -18,17 +18,17 @@
     button {
         margin: 0px 5px 0px 5px;
     }
-
-    #background {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
+    
+    body {
+        background-image: url("darkness.png");
     }
 
-    .container {
-    position: relative,
+    h1 {
+        color: #42B742;
+    }
+
+    label {
+        color: #42B742;
     }
     </style>
 </head>
@@ -41,8 +41,8 @@
         <label for = "meme-input">Add a meme!</label>
         <input type = "text" id = "meme-input">
         <br><br>
-        <input id = "addMeme" type = "submit" value = "Submit">
-        <input id = "surprise" type = "submit" value = "Surprise!">
+        <input class = "btn btn-secondary" id = "addMeme" type = "submit" value = "Submit">
+        <input class = "btn btn-secondary" id = "surprise" type = "submit" value = "Surprise!">
     </form>
     <br>
     <div id = "gifsHere"></div>
